@@ -1,8 +1,7 @@
 package com.dbmovies.db_movies.domain.entities;
 
-import java.sql.Timestamp;
-
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,8 +25,11 @@ public class City {
     @JoinColumn(name = "id_country",nullable = false)
     private Country country;
 
-    @Column(name = "last_update",columnDefinition = "TIMESTAMP")
-    private Timestamp lastUpdate;
+    // @Column(name = "last_update",columnDefinition = "TIMESTAMP")
+    // private Timestamp lastUpdate;
+
+    @Embedded
+    Audit audit = new Audit();
 
     public City() {
     }
@@ -46,14 +48,6 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Timestamp getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Timestamp lastUpdate) {
-        this.lastUpdate = lastUpdate;
     }
 
     public Country getCountry() {

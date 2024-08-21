@@ -1,11 +1,11 @@
 package com.dbmovies.db_movies.domain.entities;
 
 import java.sql.Blob;
-import java.sql.Timestamp;
 
 import java.util.List;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -50,8 +50,11 @@ public class Employee {
     @Column(columnDefinition = "VARCHAR(40)")
     private String password;
 
-    @Column(name = "last_update",columnDefinition = "TIMESTAMP")
-    private Timestamp lastUpdate;
+    // @Column(name = "last_update",columnDefinition = "TIMESTAMP")
+    // private Timestamp lastUpdate;
+
+    @Embedded
+    Audit audit = new Audit();
 
     public Employee() {
     }
@@ -129,12 +132,12 @@ public class Employee {
         this.warehouse = warehouse;
     }
 
-    public Timestamp getLastUpdate() {
-        return lastUpdate;
-    }
+    // public Timestamp getLastUpdate() {
+    //     return lastUpdate;
+    // }
 
-    public void setLastUpdate(Timestamp lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
+    // public void setLastUpdate(Timestamp lastUpdate) {
+    //     this.lastUpdate = lastUpdate;
+    // }
 
 }

@@ -1,5 +1,6 @@
 package com.dbmovies.db_movies.domain.entities;
 
+
 import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
@@ -26,6 +27,9 @@ public class CategoryMovies {
 
     @Column(columnDefinition = "TIMESTAMP")
     private Timestamp lastUpdate;
+
+    // @Embedded
+    // Audit audit = new Audit();
 
     public CategoryMovies() {
     }
@@ -62,9 +66,6 @@ public class CategoryMovies {
         this.lastUpdate = lastUpdate;
     }
 
-
-
-
-
+    
     
 }

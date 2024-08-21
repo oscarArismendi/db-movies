@@ -1,8 +1,7 @@
 package com.dbmovies.db_movies.domain.entities;
 
-import java.sql.Timestamp;
-
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,8 +27,11 @@ public class Warehouse {
     private Address address;
 
 
-    @JoinColumn(columnDefinition = "TIMESTAMP")
-    private Timestamp last_update;
+    // @JoinColumn(columnDefinition = "TIMESTAMP")
+    // private Timestamp last_update;
+
+    @Embedded
+    Audit audit = new Audit();
 
     public Warehouse() {
     }
@@ -49,15 +51,5 @@ public class Warehouse {
     public void setBossEmployee(Employee bossEmployee) {
         this.bossEmployee = bossEmployee;
     }
-
-    public Timestamp getLast_update() {
-        return last_update;
-    }
-
-    public void setLast_update(Timestamp last_update) {
-        this.last_update = last_update;
-    }
-
-    
 
 }

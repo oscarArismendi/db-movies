@@ -1,6 +1,7 @@
 package com.dbmovies.db_movies.domain.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,19 +14,22 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movie", columnDefinition = "SMALLINT UNSIGNED", nullable = false)
-    private Short idMovie;
+    private Long idMovie;
 
     @Column(columnDefinition = "VARCHAR(255)")
     private String title;
 
+    @Embedded
+    Audit audit = new Audit();
+
     public Movie() {
     }
 
-    public Short getIdMovie() {
+    public Long getIdMovie() {
         return idMovie;
     }
 
-    public void setIdMovie(Short idMovie) {
+    public void setIdMovie(Long idMovie) {
         this.idMovie = idMovie;
     }
 

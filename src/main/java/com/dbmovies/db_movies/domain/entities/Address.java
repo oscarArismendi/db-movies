@@ -1,8 +1,8 @@
 package com.dbmovies.db_movies.domain.entities;
 
-import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,8 +38,11 @@ public class Address {
     @Column(columnDefinition = "VARCHAR(20)")
     private String phone;
 
-    @Column(name = "last_update",columnDefinition = "TIMESTAMP")
-    private Timestamp lastUpdate;
+    // @Column(name = "last_update",columnDefinition = "TIMESTAMP")
+    // private Timestamp lastUpdate;
+
+    @Embedded
+    Audit audit = new Audit();
 
     public Address() {
     }
@@ -100,13 +103,7 @@ public class Address {
         this.phone = phone;
     }
 
-    public Timestamp getLastUpdate() {
-        return lastUpdate;
-    }
 
-    public void setLastUpdate(Timestamp lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
 
     
 }
