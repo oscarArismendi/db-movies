@@ -9,8 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.dbmovies.db_movies.domain.entities.Category;
+import com.dbmovies.db_movies.domain.repositories.CategoryRepository;
 import com.dbmovies.db_movies.domain.service.ICategory;
-import com.dbmovies.db_movies.repositories.CategoryRepository;
 
 @Service
 public class CategoryImpl implements ICategory {
@@ -25,14 +25,12 @@ public class CategoryImpl implements ICategory {
 
     @Override
     public Optional<Category> findOneById(Long Id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOneById'");
+        return categoryRepository.findById(Id);
     }
 
     @Override
     public Category createOne(Category category) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createOne'");
+        return categoryRepository.save(category);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_employee", columnDefinition = "TINYINT UNSIGNED", nullable = false)
-    private Short idEmployee;
+    private Long idEmployee;
 
     @Column(columnDefinition = "VARCHAR(45)")
     private String firstname;
@@ -59,11 +59,11 @@ public class Employee {
     public Employee() {
     }
 
-    public Short getIdEmployee() {
+    public Long getIdEmployee() {
         return idEmployee;
     }
 
-    public void setIdEmployee(Short idEmployee) {
+    public void setIdEmployee(Long idEmployee) {
         this.idEmployee = idEmployee;
     }
 

@@ -8,8 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.dbmovies.db_movies.domain.entities.Address;
+import com.dbmovies.db_movies.domain.repositories.AddressRepository;
 import com.dbmovies.db_movies.domain.service.IAddress;
-import com.dbmovies.db_movies.repositories.AddressRepository;
 
 @Service
 public class AddressImpl implements IAddress {

@@ -1,4 +1,4 @@
-package com.dbmovies.db_movies.repositories;
+package com.dbmovies.db_movies.domain.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

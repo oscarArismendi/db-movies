@@ -16,7 +16,7 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_city",columnDefinition = "SMALLINT UNSIGNED",nullable = false)
-    private Short idCity;
+    private Long idCity;
 
     @Column(columnDefinition = "VARCHAR(50)",nullable = false)
     private String name;
@@ -34,11 +34,11 @@ public class City {
     public City() {
     }
 
-    public Short getIdCity() {
+    public Long getIdCity() {
         return idCity;
     }
 
-    public void setIdCity(Short idCity) {
+    public void setIdCity(Long idCity) {
         this.idCity = idCity;
     }
 

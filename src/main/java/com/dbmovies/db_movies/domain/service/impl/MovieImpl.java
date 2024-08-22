@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dbmovies.db_movies.domain.entities.Movie;
+import com.dbmovies.db_movies.domain.repositories.MovieRepository;
 import com.dbmovies.db_movies.domain.service.IMovies;
-import com.dbmovies.db_movies.repositories.MovieRepository;
 
 
 

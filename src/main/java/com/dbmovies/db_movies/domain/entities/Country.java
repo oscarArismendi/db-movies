@@ -15,7 +15,7 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_country",columnDefinition = "SMALLINT UNSIGNED", nullable = false)
-    private Short idCountry;
+    private Long idCountry;
 
     @Column(columnDefinition = "VARCHAR(50)", nullable = false)
     private String name;
@@ -29,11 +29,11 @@ public class Country {
     public Country() {
     }
 
-    public Short getIdCountry() {
+    public Long getIdCountry() {
         return idCountry;
     }
 
-    public void setIdCountry(Short idCountry) {
+    public void setIdCountry(Long idCountry) {
         this.idCountry = idCountry;
     }
 

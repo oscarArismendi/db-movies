@@ -16,7 +16,7 @@ public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_warehouse",columnDefinition = "TINYINT UNSIGNED",nullable = false)
-    private Short idWarehouse;
+    private Long idWarehouse;
 
     @ManyToOne
     @JoinColumn(name="id_boss",nullable = false)
@@ -36,11 +36,11 @@ public class Warehouse {
     public Warehouse() {
     }
 
-    public Short getIdWarehouse() {
+    public Long getIdWarehouse() {
         return idWarehouse;
     }
 
-    public void setIdWarehouse(Short idWarehouse) {
+    public void setIdWarehouse(Long idWarehouse) {
         this.idWarehouse = idWarehouse;
     }
 

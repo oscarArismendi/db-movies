@@ -17,7 +17,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_address",columnDefinition = "SMALLINT UNSIGNED",nullable = false)
-    private Short idAddress;
+    private Long idAddress;
 
     @Column(columnDefinition = "VARCHAR(50)",nullable=false)
     private String address;
@@ -47,11 +47,11 @@ public class Address {
     public Address() {
     }
 
-    public Short getIdAddress() {
+    public Long getIdAddress() {
         return idAddress;
     }
 
-    public void setIdAddress(Short idAddress) {
+    public void setIdAddress(Long idAddress) {
         this.idAddress = idAddress;
     }
 
